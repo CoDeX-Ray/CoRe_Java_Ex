@@ -11,14 +11,15 @@ Expected Output : 25 x 5 = 125
 
 public class jvEx5 {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Input first number: ");
-        int firstNumber = scan.nextInt();
-        System.out.print("Input second number: ");
-        int secondNumber = scan.nextInt();
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.print("Input first number: ");
+            int firstNumber = scan.nextInt();
+            System.out.print("Input second number: ");
+            int secondNumber = scan.nextInt();
 
-        int product = firstNumber * secondNumber;
+            int product = firstNumber * secondNumber;
 
-        System.out.println(firstNumber + " x " + secondNumber + " = " + product);
+            System.out.println(firstNumber + " x " + secondNumber + " = " + product);
+        }
     }
 }
